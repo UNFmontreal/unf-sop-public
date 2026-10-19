@@ -2,10 +2,14 @@
 
 UNF 3T generic procedures
 
-#### Author:
+#### Authors:
 Daniel Papp<br>
 MRI Physicist<br>
 2023
+
+André Cyr<br>
+Biomedical engineer<br>
+2026
 
 Version|Initials|Date|Comment
 -|-|-|-
@@ -20,17 +24,24 @@ Version|Initials|Date|Comment
     1. [Register a new patient](#regpat)
     1. [Expert-i access](#experti)
     1. [Disabling kiosk mode (formerly Enable advanced user mode on VE11)](#adv-user)
+    1. Installing sequences
     1. Install security certificates
-1. [FOV positioning](#fov)
-2. [Table positioning mode](#tablepos)
-3. [Reversing the Phase Encoding Direction](#pe_rev)
-4. [Multiplanar reconstruction](#mpr)
-5. [Advanced shimming](#advshim)
-6. [Enabling or disabling distortion correction](#dist-corr)
-7. [Using coupled graphics](#coupled-graphics)
-8. [Adding image comments](#image-comment)
-8. [PMU recording](#pmu-recording)
-9. [What to do if the scanner hangs](#scanner-hang)
+1. Running scans
+    1. [FOV positioning](#fov)
+    2. [Table positioning mode](#tablepos)
+    3. [Reversing the Phase Encoding Direction](#pe_rev)
+    4. [Multiplanar reconstruction](#mpr)
+    5. [Advanced shimming](#advshim)
+    6. [Enabling or disabling distortion correction](#dist-corr)
+    7. [Using coupled graphics](#coupled-graphics)
+1. Post scannning
+    1. [Adding image comments](#image-comment)
+    1. Correct participant data before transferring
+    1. Transfer data to server
+    1. Transfer raw image data
+1. [PMU recording](#pmu-recording)
+1. Troubleshooting
+    9. [What to do if the scanner hangs](#scanner-hang)
 
 
 # List of acronyms
@@ -77,8 +88,9 @@ VPN connection parameters
 ## To start an Expert-i session
 
 ### On the SYNGO Console
-1. Click on the expert-i icon in the top right corner of the screen
-2. Select Provide Epert-i access
+1. Click on the expert-i icon <img src="img/expert-i_icon.png" alt="" width="25"/> in the top right corner of the screen
+2. Select `Provide Expert-i access`<br>
+<img src="img/provide_expert-i_access.png" alt="" width="125"/><br>
 3. Choose the connection mode. View only will allow the remote user to see the whole content of the screen, but not to interact with it while Full Access will allow the remote user to control the scanner in the same way as if they were at the console
 4. Click on `Allow Connection`
 5. Give the 4 digits access code to the remote user who will then have 2 minutes to connect before the session times out.
