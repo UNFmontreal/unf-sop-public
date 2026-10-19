@@ -22,6 +22,7 @@ Version|Initials|Date|Comment
 
 1. Console management
     1. [Register a new patient](#regpat)
+    1. [Saving a scan session as a new protocol](#save_session_as_protocol)
     1. [Expert-i access](#experti)
     1. [Disabling kiosk mode (formerly Enable advanced user mode on VE11)](#adv-user)
     1. Installing sequences
@@ -72,6 +73,22 @@ VOI : Volume of interest<br>
 7. Select the appropriate program from the `program selection` dialog and appropriate patient orientation (usually Head First Supine)
 
 8. Click `Save` to store that patient for future scanning or `Exam` to start scanning with tat patient.
+
+# <a name="save_session_as_protocol)">Saving a scan session as a new protocol</a>
+
+  ## If the session is still opened
+
+
+  ## If the session is closed
+  1. Open `myExamCockpit` and navigate to the tree where you want to create the new protocol
+  1. Right-click in the tree and select `New`, then `Program`
+  1. Click `Save program as` and enter the name you want to give it
+  1. Open the patient browser by clicking on the  icon at the top left in the examination workflow<br>
+  <img src="img/patient_browser.png" alt="" width="250"/>
+  1. Select the scanning session you want to save in the `Results` pane
+  1. In the `Series` pane, click the PhoenixZIPReport series and drag it in yiur opened program. A + signs will appear next to the cursor<br>
+  <img src="img/phoenix_report_1.png" alt="" width="350"/>
+  1. Close the program and save the changes
 
 
 # <a name="experti">Expert-i access</a>
