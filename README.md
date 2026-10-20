@@ -25,7 +25,7 @@ Version|Initials|Date|Comment
     1. [Saving a scan session as a new protocol](#save_session_as_protocol)
     1. [Expert-i access](#experti)
     1. [Disabling kiosk mode (formerly Enable advanced user mode on VE11)](#adv-user)
-    1. Installing sequences
+    1. [Installing sequences](#seq_install)
     1. [Install security certificates](#cert_install)
 1. Running scans
     1. [FOV positioning](#fov)
@@ -52,6 +52,8 @@ FOV : Field of view<br>
 MPR : Multiplanar Reconstruction<br>
 PMU : Patient Monitoring Unit<br>
 VOI : Volume of interest<br>
+
+# Console management
 
 ## <a name="regpat">Register a new patient</a>
 1. Press the register new patient key (0 on the numeric keypad), or click on the register new patient icon .
@@ -132,6 +134,16 @@ Hit `TAB` + `DEL` + `NUMPAD + or Send to PACS` on the keyboard to open a login m
 <img src="img/disable_kiosk_mode.png" alt="UNF logo" width="500"/><br>
 **Figure 13.** Disable kiosk mode
 
+## <a name="seq_install">Installing sequences</a>
+
+### Case 1 There is an installer provided
+
+1. Make sure that kiosk mode is deactivated
+1. Copy installer on console hard drive, e.g. in `C:\TEMP`
+1. Right-click on installer file, and select `Run as administrator`
+1. Enter admin credentials
+
+### Case 2 Sequence files only (no installer)
 
 ## <a name="cert_install">Installing security certificates</a>
 

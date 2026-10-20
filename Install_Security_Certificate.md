@@ -42,12 +42,12 @@ then the certificates are installed and you can proceed to installation by right
   1. Click `Finish`
 
 ## 4. Register certificates with device guard
-  1. Open admin command prompt or right-click normal command prompt, then select `run as administrator`
+  1. Open admin command prompt or right-click normal command prompt, then select `run as administrator`<br>
   <img src="img/cmd_prompt.png" alt="" width="300"/><br>
   1. Type in admin credentials
   1. Type in `powershell`
   1. Type in `Set-ExecutionPolicy Bypass`
   1. Type in `Get-ExecutionPolicy` (check that status is actually set to bypass)
   1. Type in `& $env:MED_BIN\Scripts\DeviceGuardPreparation.ps1 C:\TEMP\MyCertificateName.cer` with the path to the certificate you installed on preceding step **Important** This step may appear to hang, but can take as long as 10 minutes to complete. Do not reboot system or close window.
-  1. Repeat step 5 for each certificate you need to install
+  1. Repeat step 6 for each certificate you need to install
   1. Restart system. Full reboot is required - not just restart workplace
