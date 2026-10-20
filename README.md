@@ -37,7 +37,7 @@ Version|Initials|Date|Comment
     7. [Using coupled graphics](#coupled-graphics)
 1. Post scannning
     1. [Adding image comments](#image-comment)
-    1. Correct participant data before transferring
+    1. [Correct participant data before transferring](#pt_correct)
     1. Transfer data to server
     1. Transfer raw image data
 1. [PMU recording](#pmu-recording)
@@ -53,7 +53,7 @@ MPR : Multiplanar Reconstruction<br>
 PMU : Patient Monitoring Unit<br>
 VOI : Volume of interest<br>
 
-# <a name="regpat">Register a new patient</a>
+## <a name="regpat">Register a new patient</a>
 1. Press the register new patient key (0 on the numeric keypad), or click on the register new patient icon .
 
 <img src="img/regpat_key.png" alt="" width="300"/>
@@ -66,7 +66,7 @@ VOI : Volume of interest<br>
 
 4. Fill in the next mandatory fields Date of birth, Sex, Height and Weight.
 
-5. In the field `Referring physician`, enter the appropriate gid for the session (link to config json needed).
+5. In the field `Referring physician`, enter the appropriate gid for the session. The config file is located  [here](https://github.com/UNFmontreal/bids_configs/blob/master/studies.json).
 
 6. Enter operator's initials in field `Operator`
 
@@ -74,24 +74,28 @@ VOI : Volume of interest<br>
 
 8. Click `Save` to store that patient for future scanning or `Exam` to start scanning with tat patient.
 
-# <a name="save_session_as_protocol)">Saving a scan session as a new protocol</a>
+## <a name="save_session_as_protocol)">Saving a scan session as a new protocol</a>
 
-  ## If the session is still opened
+  ### If the session is still opened in the exam card
+  1. Right-click in the sequence listing area and select `Save as`<br>
+  <img src="img/save_session_as_protocol_1.png" alt="" width="250"/>
+  1. Browse the trees for the location you want to save your new program and enter the name you want to give it<br>
+  <img src="img/save_session_as_protocol_2.png" alt="" width="250"/>
 
 
-  ## If the session is closed
+  ### If the session is closed
   1. Open `myExamCockpit` and navigate to the tree where you want to create the new protocol
   1. Right-click in the tree and select `New`, then `Program`
   1. Click `Save program as` and enter the name you want to give it
   1. Open the patient browser by clicking on the  icon at the top left in the examination workflow<br>
   <img src="img/patient_browser.png" alt="" width="250"/>
-  1. Select the scanning session you want to save in the `Results` pane
-  1. In the `Series` pane, click the PhoenixZIPReport series and drag it in yiur opened program. A + signs will appear next to the cursor<br>
+  1. Select the scanning session you want to save in the `Results` pane on the left
+  1. In the `Series` pane on the right, click the PhoenixZIPReport series and drag it in your opened program. A + signs will appear next to the cursor<br>
   <img src="img/phoenix_report_1.png" alt="" width="350"/>
   1. Close the program and save the changes
 
 
-# <a name="experti">Expert-i access</a>
+## <a name="experti">Expert-i access</a>
 Expert-i allows a remote user to connect to connect and interact with the SYNGO console. It can be useful for remote troubleshooting or for collaboration.
 
 **The remote user needs a connection to the CRIUGM VPN**
@@ -102,9 +106,9 @@ The remote user can use Fortigate client (FortiClient) or OpenFortiVPN CLI. They
 VPN connection parameters
 
 
-## To start an Expert-i session
+### To start an Expert-i session
 
-### On the SYNGO Console
+#### On the SYNGO Console
 1. Click on the expert-i icon <img src="img/expert-i_icon.png" alt="" width="25"/> in the top right corner of the screen
 2. Select `Provide Expert-i access`<br>
 <img src="img/provide_expert-i_access.png" alt="" width="125"/><br>
@@ -112,10 +116,21 @@ VPN connection parameters
 4. Click on `Allow Connection`
 5. Give the 4 digits access code to the remote user who will then have 2 minutes to connect before the session times out.
 
-### On the remote computer
+#### On the remote computer
 After the connection to CRIUGM VPN is established, the remote user can launch Siemens Expert-i application on their Windows computer, or they can direct an internet browser to https://10.30.16.5:7443/syngo.experti. If using the browser method, the user will have to accept the certificate security warning and click on "Proceed to site anyway".
 
 After the connection is established, the remote user will see the whole Syngo screen. If the connection mode is View only, they will not be able to interact with the console, but they will be able to move a cursor to point elements to the console operator. If the connection mode is Full Access, they will be able to interact fully with the console as if they were sitting in front of it.
+
+## <a name="adv-user">Disabling kiosk mode (formerly Enable advanced user mode on VE11)</a>
+
+### Description:
+Advanced User mode allows the Scanner Operator to access more features than in normal operating mode, such as mounting external drives, copying data, installing new sequences and ICE programs, etc. Please note that all procedures detailed after this one require “Advanced User” mode to be enabled
+
+### Procedure:
+Hit `TAB` + `DEL` + `NUMPAD + or Send to PACS` on the keyboard to open a login menu. Enter `medadmin` as the user name and type in the password.
+
+<img src="img/disable_kiosk_mode.png" alt="UNF logo" width="500"/><br>
+**Figure 13.** Disable kiosk mode
 
 # <a name="fov">FOV positioning</a>
 
@@ -249,16 +264,7 @@ However, the most common use case for this is in spectroscopy, if saturation ban
 ### Description and use case:
 
 
-# <a name="adv-user">Disabling kiosk mode (formerly Enable advanced user mode on VE11)</a>
 
-### Description:
-Advanced User mode allows the Scanner Operator to access more features than in normal operating mode, such as mounting external drives, copying data, installing new sequences and ICE programs, etc. Please note that all procedures detailed after this one require “Advanced User” mode to be enabled
-
-### Procedure:
-Hit `TAB` + `DEL` + `NUMPAD + or Send to PACS` on the keyboard to open a login menu. Enter `medadmin` as the user name and type in the password.
-
-<img src="img/disable_kiosk_mode.png" alt="UNF logo" width="500"/><br>
-**Figure 13.** Disable kiosk mode
 
 # Opening a terminal
 
