@@ -26,7 +26,7 @@ Version|Initials|Date|Comment
     1. [Expert-i access](#experti)
     1. [Disabling kiosk mode (formerly Enable advanced user mode on VE11)](#adv-user)
     1. Installing sequences
-    1. Install security certificates
+    1. [Install security certificates](#cert_install)
 1. Running scans
     1. [FOV positioning](#fov)
     2. [Table positioning mode](#tablepos)
@@ -60,7 +60,7 @@ VOI : Volume of interest<br>
  or
 <img src="img/regpat_icon.png" alt="" width="300"/>
 
-2. Enter the session name in the field `Last Name`. The session name should match what was entered on the MRI calendar when booking the session. **Important: Never enter the participant's actual name** If a participant's name is mistakenly entered on the console, data should be corrected before being transfered to server.
+2. Enter the session name in the field `Last Name`. The session name should match what was entered on the MRI calendar when booking the session. **Important: Never enter the participant's actual name** If a participant's name is mistakenly entered on the console, data should be corrected before being transfered to server. Correction procedure [here](#pt_correct)
 
 3. Press the `Tab` key a few times to advance through the fields. When focus is on `Patient ID`, press `Tab` once more to automatically generate a unique patient ID.
 
@@ -72,7 +72,7 @@ VOI : Volume of interest<br>
 
 7. Select the appropriate program from the `program selection` dialog and appropriate patient orientation (usually Head First Supine)
 
-8. Click `Save` to store that patient for future scanning or `Exam` to start scanning with tat patient.
+8. Click `Save` to store that patient for future scanning or `Exam` to start scanning with that patient.
 
 ## <a name="save_session_as_protocol)">Saving a scan session as a new protocol</a>
 
@@ -131,6 +131,11 @@ Hit `TAB` + `DEL` + `NUMPAD + or Send to PACS` on the keyboard to open a login m
 
 <img src="img/disable_kiosk_mode.png" alt="UNF logo" width="500"/><br>
 **Figure 13.** Disable kiosk mode
+
+
+## <a name="cert_install">Installing security certificates</a>
+
+The procedure to install security certificates is detailes in this [document](Install_Security_Certificate.md)
 
 # <a name="fov">FOV positioning</a>
 
