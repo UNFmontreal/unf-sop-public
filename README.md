@@ -29,18 +29,18 @@ Version|Initials|Date|Comment
     1. [Install security certificates](#cert_install)
 1. Running scans
     1. [FOV positioning](#fov)
-    2. [Table positioning mode](#tablepos)
-    3. [Reversing the Phase Encoding Direction](#pe_rev)
-    4. [Multiplanar reconstruction](#mpr)
-    5. [Advanced shimming](#advshim)
-    6. [Enabling or disabling distortion correction](#dist-corr)
-    7. [Using coupled graphics](#coupled-graphics)
+    1. [Table positioning mode](#tablepos)
+    2. [Reversing the Phase Encoding Direction](#pe_rev)
+    1. [Multiplanar reconstruction](#mpr)
+    1. [Advanced shimming](#advshim)
+    1. [Enabling or disabling distortion correction](#dist-corr)
+    1. [Using coupled graphics](#coupled-graphics)
+    1. [PMU recording](#pmu-recording)
 1. Post scannning
     1. [Adding image comments](#image-comment)
-    1. [Correct participant data before transferring](#pt_correct)
+    1. [Correct data before transferring](#pt_correct)
     1. Transfer data to server
     1. Transfer raw image data
-1. [PMU recording](#pmu-recording)
 1. Troubleshooting
     9. [What to do if the scanner hangs](#scanner-hang)
 
@@ -263,7 +263,7 @@ Next, close the Adjustment window, and acquire the scan.
 <img src="img/adv_shim_2.png" alt="UNF logo" width="800"/><br>
 **Figure 11.** Part 2 of advanced shimming
 
-# <a name="coupled-graphics">Using Coupled Graphics (useful for spectroscopy planning)</a>
+## <a name="coupled-graphics">Using Coupled Graphics (useful for spectroscopy planning)</a>
 
 ### Description and use case:
 The “Coupled Graphics” option allows GUI elements associated with planning scans to be moved as a group. For example, in a multi-slice acquisition with many slice groups, they can be moved together, preserving their relative position to each other while changing their position respective to the anatomy.
@@ -276,11 +276,22 @@ However, the most common use case for this is in spectroscopy, if saturation ban
 3. Right click on one of the three views and select “Coupled Graphics ON”. A checkmark should now appear next to the option
 4. Grab the VOI of the spectroscopy scan, and reposition it. All the saturation bands should now be moved with it.
 
-# <a name="image-comment">Adding Image Comments</a>
+## <a name="pmu-recording">Recording PMU data</a>
+
+
+# Post scanning
+
+## <a name="image-comment">Adding Image Comments</a>
 
 ### Description and use case:
 
-
+## <a name="pt_correct">Correct data before transferring</a>
+1. Open patient browser
+<br><br><img src="img/patient_browser.png" alt="UNF logo" width="200"/><br><br>
+1. Right-click on the patient to correct in the `Results` pane on the left
+1. Select `Correct` option
+1. Edit the information that you need to correct. Usually, it will be the Last name (session name) field in the patient tab or the Referring physician (gid) in the study tab
+1. Click `OK` and accept the changes
 
 
 # Opening a terminal
@@ -383,7 +394,7 @@ TWIX is the raw k-space data of a scan, with a data size at least an order of ma
 
 # Retrospective Reconstruction for Multiband Sequences
 
-# <a name="pmu-recording">Recording PMU data</a>
+
 
 ### Installation
 
