@@ -76,7 +76,7 @@ VOI : Volume of interest<br>
 
 8. Click `Save` to store that patient for future scanning or `Exam` to start scanning with that patient.
 
-## <a name="save_session_as_protocol)">Saving a scan session as a new protocol</a>
+## <a name="save_session_as_protocol">Saving a scan session as a new protocol</a>
 
   ### If the session is still opened in the exam card
   1. Right-click in the sequence listing area and select `Save as`<br>
