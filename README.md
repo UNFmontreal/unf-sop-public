@@ -167,19 +167,23 @@ then the certificates are installed and you can proceed to installation by right
 
   1. Try to load the sequence from the DEFAULT tree - Customer Sequences region
 
-## 3. Install certificate
+#### 3. Install certificate
   1. Copy certificate (.cer) file on disk
-  1. Right-click on file and choose `Install certificate`
-  1. Select `Local machine` as Store Location
+  1. Right-click on file and choose `Install certificate`<br>
+    <img src="img/cert_inst_01.png" alt="" width="300"/><br><br>
+  1. Select `Local machine` as Store Location<br>
+  <img src="img/cert_inst_02.png" alt="" width="300"/><br><br>
   1. Enter admin Credentials
   1. Select `Place all certificates in the following store`, then click browse
-  1. Select `Trusted Root Certification Authorities` and click `OK`
+  1. Select `Trusted Root Certification Authorities` and click `OK`<br>
+  <img src="img/cert_inst_03.png" alt="" width="300"/><br><br>
   1. Click `Next`
-  1. Click `Finish`
+  1. Click `Finish`<br>
+  <img src="img/cert_inst_04.png" alt="" width="300"/><br><br>
 
-## 4. Register certificates with device guard
+#### 4. Register certificates with device guard
   1. Open admin command prompt or right-click normal command prompt, then select `run as administrator`<br>
-  <img src="img/cmd_prompt.png" alt="" width="300"/><br>
+  <img src="img/cmd_prompt.png" alt="" width="300"/><br><br>
   1. Type in admin credentials
   1. Type in `powershell`
   1. Type in `Set-ExecutionPolicy Bypass`
