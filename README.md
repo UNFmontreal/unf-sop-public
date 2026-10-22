@@ -23,10 +23,9 @@ Version|Initials|Date|Comment
 1. Console management
     1. [Register a new patient](#regpat)
     1. [Saving a scan session as a new protocol](#save_session_as_protocol)
-    1. [Expert-i access](#experti)
     1. [Disabling kiosk mode (formerly Enable advanced user mode on VE11)](#adv-user)
-    1. [Installing sequences](#seq_install)
-    1. [Install security certificates](#cert_install)
+    1. [Expert-i access](#experti)
+    1. [Installing sequences and security certificates](#seq_install)
 1. Running scans
     1. [FOV positioning](#fov)
     1. [Table positioning mode](#tablepos)
@@ -97,6 +96,17 @@ VOI : Volume of interest<br>
   1. Close the program and save the changes
 
 
+  ## <a name="adv-user">Disabling kiosk mode (formerly Enable advanced user mode on VE11)</a>
+
+  ### Description:
+  Advanced User mode allows the Scanner Operator to access more features than in normal operating mode, such as mounting external drives, copying data, installing new sequences and ICE programs, etc. Please note that all procedures detailed after this one require “Advanced User” mode to be enabled
+
+  ### Procedure:
+  Hit `TAB` + `DEL` + `NUMPAD + or Send to PACS` on the keyboard to open a login menu. Enter `medadmin` as the user name and type in the password.
+
+  <img src="img/disable_kiosk_mode.png" alt="UNF logo" width="500"/><br>
+
+
 ## <a name="experti">Expert-i access</a>
 Expert-i allows a remote user to connect to connect and interact with the SYNGO console. It can be useful for remote troubleshooting or for collaboration.
 
@@ -123,33 +133,60 @@ After the connection to CRIUGM VPN is established, the remote user can launch Si
 
 After the connection is established, the remote user will see the whole Syngo screen. If the connection mode is View only, they will not be able to interact with the console, but they will be able to move a cursor to point elements to the console operator. If the connection mode is Full Access, they will be able to interact fully with the console as if they were sitting in front of it.
 
-## <a name="adv-user">Disabling kiosk mode (formerly Enable advanced user mode on VE11)</a>
-
-### Description:
-Advanced User mode allows the Scanner Operator to access more features than in normal operating mode, such as mounting external drives, copying data, installing new sequences and ICE programs, etc. Please note that all procedures detailed after this one require “Advanced User” mode to be enabled
-
-### Procedure:
-Hit `TAB` + `DEL` + `NUMPAD + or Send to PACS` on the keyboard to open a login menu. Enter `medadmin` as the user name and type in the password.
-
-<img src="img/disable_kiosk_mode.png" alt="UNF logo" width="500"/><br>
-**Figure 13.** Disable kiosk mode
-
-## <a name="seq_install">Installing sequences</a>
-
-### Case 1 There is an installer provided
-
-1. Make sure that kiosk mode is deactivated
-1. Copy installer on console hard drive, e.g. in `C:\TEMP`
-1. Right-click on installer file, and select `Run as administrator`
-1. Enter admin credentials
-
-### Case 2 Sequence files only (no installer)
-
-## <a name="cert_install">Installing security certificates</a>
-
-The procedure to install security certificates is detailes in this [document](Install_Security_Certificate.md)
 
 
+## <a name="seq_install">Installing sequences and security certificates</a>
+
+### Install Security Certificate
+
+#### 1. Deactivate kiosk mode
+If not done already, [deactivate kiosk mode](#adv-user)
+
+#### 2. Check if certificate needs to be installed
+
+##### Case 1: An installer is provided for the sequence
+1. Copy the installer on the console e.g. in `C:\temp`
+1. Double-click on installer (.exe file) **Do not** try to run it as an administrator yet. This step will fail, but the error message will tell you whether the certificates are installed or not.
+
+If this error message appears:<br>
+<img src="img/no_cert.png" alt="" width="400"/><br>
+then the certificates are not installed. Proceed to next step to install them.
+
+If this error message appears:<br>
+<img src="img/cert_ok.png" alt="" width="400"/><br>
+then the certificates are installed and you can proceed to installation by right-clicking the executable file and select `Run as administrator`
+
+
+##### Case 2: No installer is provided
+
+  1. Copy sequence files in:<br>
+  `C:\ProgramData\Siemens\Numaris\MriCustomer\CustomerSeq`
+
+  1. Copy reconstruction files in:<br>
+  `C:\ProgramData\Siemens\Numaris\MriCustomer\Ice`
+
+  1. Try to load the sequence from the DEFAULT tree - Customer Sequences region
+
+## 3. Install certificate
+  1. Copy certificate (.cer) file on disk
+  1. Right-click on file and choose `Install certificate`
+  1. Select `Local machine` as Store Location
+  1. Enter admin Credentials
+  1. Select `Place all certificates in the following store`, then click browse
+  1. Select `Trusted Root Certification Authorities` and click `OK`
+  1. Click `Next`
+  1. Click `Finish`
+
+## 4. Register certificates with device guard
+  1. Open admin command prompt or right-click normal command prompt, then select `run as administrator`<br>
+  <img src="img/cmd_prompt.png" alt="" width="300"/><br>
+  1. Type in admin credentials
+  1. Type in `powershell`
+  1. Type in `Set-ExecutionPolicy Bypass`
+  1. Type in `Get-ExecutionPolicy` (check that status is actually set to bypass)
+  1. Type in `& $env:MED_BIN\Scripts\DeviceGuardPreparation.ps1 C:\TEMP\MyCertificateName.cer` with the path to the certificate you installed on preceding step **Important** This step may appear to hang, but can take as long as 10 minutes to complete. Do not reboot system or close window.
+  1. Repeat step 6 for each certificate you need to install
+  1. Restart system. Full reboot is required - not just restart workplace
 
 # Post scanning
 
