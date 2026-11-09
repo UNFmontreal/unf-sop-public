@@ -145,7 +145,7 @@ After the connection is established, the remote user will see the whole Syngo sc
 
 #### 1. Deactivate kiosk mode
 
-If not done already, [deactivate kiosk mode](#adv-user)
+If not done already, [deactivate kiosk mode](#adv-user) (ie: enable adv-user)
 
 #### 2. Check if certificate needs to be installed
 
