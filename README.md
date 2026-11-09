@@ -170,7 +170,7 @@ then the certificates are installed and you can proceed to installation by right
   1. Copy reconstruction files in:  
   `C:\ProgramData\Siemens\Numaris\MriCustomer\Ice`
 
-  1. Try to load the sequence from the DEFAULT tree - Customer Sequences region
+  1. Try to load the sequence from the DEFAULT tree - Customer Sequences region. If you see the sequence, you do not need to install the certificate.
 
 #### 3. Install certificate
 
